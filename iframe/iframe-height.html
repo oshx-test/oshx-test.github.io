@@ -9,7 +9,7 @@
             var thisDomain = window.document.domain;
             window.originDomain = thisDomain;
             if (thisDomain.length > 2) {
-                thisDomain.split['.'];
+                thisDomain.split('.');
                 thisDomain.shift();
                 window.document.domain = thisDomain.join('.');
             }
@@ -22,11 +22,11 @@
 <body>
     <h1>iframe child for &quot;https://oshx.github.io/iframe/iframe-height.html&quot;</h1>
     <script>
-        document.write('원본 domain: ' + originDomain);
-        document.write('현재 domain: ' + document.domain);
-        document.write('...3초 후 이 창의 높이를 이 아래에 씁니다.');
+        document.write('<p>원본 domain: ' + originDomain + '</p>');
+        document.write('<p>현재 domain: ' + document.domain + '</p>');
+        document.write('<p>...3초 후 이 창의 높이를 이 아래에 씁니다.</p>');
         setTimeout(function(){
-            document.write($('body').height());
+            $('body').append($('body').height());
         },3000);
     </script>
 </body>
